@@ -20,8 +20,13 @@ const createCoach = async(req, res) => {
         })
 
         const savedCoach = await newCoach.save()
-    } catch {
-
+// me mostra o salvo, mais recente
+        res.status(201).json(savedCoach)
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({
+            message: error.message
+        })
     }
 }
 
