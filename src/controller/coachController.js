@@ -30,12 +30,22 @@ const createCoach = async(req, res) => {
     }
 }
 
-
 // get -> visualizar treinadores
+const findAllCoaches = async (req, res) => {
+    try {
+        const allCoaches = await CoachModel.find()
+        res.status(200).json(allCoaches)
+    } catch (error) {
+        res.status(500).json({ 
+            message: error.message
+        })
+    }
+}
 // get -> buscar por id
-
+// patch e delete por mangoose
 
 // exportando as funções
 module.exports = {
-    createCoach
+    createCoach,
+    findAllCoaches
 }
