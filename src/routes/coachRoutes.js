@@ -10,10 +10,10 @@ router.post("/treinador", controller.createCoach)
 // rota para retornar todos
 router.get("/treinadores", controller.findAllCoaches)
 // rota pra buscar por id
-
+router.get("/treinador/:id", controller.findCoachById)
 // rota para atualizar treinador
 router.patch("/treinador/:id", controller.updateCoach)
 // rota para deletar
-router.delete("/delete/:id", controller.deleteCoach)
+router.delete("/treinador/:id", controller.deleteCoach)
 
 module.exports = router
