@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 const coachSchema = mongoose.Schema({
     _id: { // para explicar o tipo de valor, e pra gerar ese valor
         type: mongoose.Schema.Types.ObjectId,
-        default: mongoose.Schema.Types.ObjectId
+        default: mongoose.Types.ObjectId
     },
     name: { 
         type: String, // "" -> é uma linha de texto

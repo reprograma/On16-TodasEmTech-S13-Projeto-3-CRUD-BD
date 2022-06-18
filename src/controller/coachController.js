@@ -13,10 +13,10 @@ const CoachModel = require('../models/coachModel') //Coach com caixa alta, não 
 // async porque vai aguardar ser passado o novo treinador para criar/salvar no servidor 
 const createCoach = async(req, res) => {
     try {
-        const { name, team, reagion, age, gender } = req.body
+        const { name, team, region, age, gender } = req.body
         // especificar que é novo, n subscrever. 'new' só funciona com classe
         const newCoach = new CoachModel({
-            name, team, reagion, age, gender
+            name, team, region, age, gender
         })
 
         const savedCoach = await newCoach.save()

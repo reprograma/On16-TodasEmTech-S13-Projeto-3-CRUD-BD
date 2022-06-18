@@ -9,7 +9,7 @@ const connect = async() => {
     try {
         mongoose.connect(DATABASE_URI, {
             useNewUrlParser: true,
-            unseUnifiedTopology: true
+            useUnifiedTopology: true
         })
         console.log('Banco Conectado!')
     }  catch (error) {

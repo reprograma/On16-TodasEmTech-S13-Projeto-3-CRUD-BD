@@ -3,7 +3,10 @@ const express = require('express')
 //chamando cors
 const cors = require('cors')
 // importas db
-const db = require('./database/mongooseConnect')
+const mongoose = require('./database/mongooseConnect')
+// rotas
+const coachRoutes = require('./routes/coachRoutes')
+
 // pra que app use express
 const app = express()
 
@@ -14,7 +17,8 @@ app.use(express.json())
 app.use(cors())
 
 // 3. conectar o banco
-db.connect()
+mongoose.connect()
+app.use(coachRoutes)
 
 // exportar app
 module.exports = app
