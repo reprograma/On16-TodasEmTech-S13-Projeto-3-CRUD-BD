@@ -17,5 +17,14 @@ const PokedexSchema = mongoose.Schema({
         type: [String],
         required: true
     },
-    description: String
-})
+    description: String,
+    coach: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'coach'
+    }
+}, { timestamps: true })
+
+const Model = mongoose.model('pokedex, Pokedex?Schema')
+
+module.exports = Model
