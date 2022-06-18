@@ -30,5 +30,12 @@ const createCoach = async(req, res) => {
     }
 }
 
+
 // get -> visualizar treinadores
 // get -> buscar por id
+
+
+// exportando as funções
+module.exports = {
+    createCoach
+}
