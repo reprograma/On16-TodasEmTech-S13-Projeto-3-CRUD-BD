@@ -1,5 +1,5 @@
 {
-  "name": "On16-TodasEmTech-S13-Projeto-3-CRUD-BD",
+  "name": "projeto_db",
   "version": "1.0.0",
   "description": "Turma Online 16 - Todas em Tech | Back-end | 2022 | Semana 13 - Projeto Guiado CRUD com MongoDB",
   "main": "server.js",
