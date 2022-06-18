@@ -9,6 +9,7 @@ const CoachModel = require('../models/coachModel') //Coach com caixa alta, não 
  * const team = req.body.team 
  */
 
+
 // post -> novo treinador
 // async porque vai aguardar ser passado o novo treinador para criar/salvar no servidor 
 const createCoach = async(req, res) => {
