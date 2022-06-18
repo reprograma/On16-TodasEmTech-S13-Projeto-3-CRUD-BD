@@ -11,4 +11,9 @@ router.post("/treinador", controller.createCoach)
 router.get("/treinadores", controller.findAllCoaches)
 // rota pra buscar por id
 
+// rota para atualizar treinador
+router.patch("/treinador/:id", controller.updateCoach)
+// rota para deletar
+router.delete("/delete/:id", controller.deleteCoach)
+
 module.exports = router
