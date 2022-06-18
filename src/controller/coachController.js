@@ -43,6 +43,16 @@ const findAllCoaches = async (req, res) => {
     }
 }
 // get -> buscar por id
+const findCoachById = async (req, res) => {
+    try {
+        const findCoach = await CoachModel.findById(req.params.id)
+        res.status(200).json(findCoach)
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({ message: error.message})
+    }
+}
+
 
 // patch
 const updateCoach = async (req, res) => {
@@ -79,6 +89,7 @@ const deleteCoach = async (req, res) => {
 module.exports = {
     createCoach,
     findAllCoaches,
+    findCoachById,
     updateCoach,
     deleteCoach
 }
