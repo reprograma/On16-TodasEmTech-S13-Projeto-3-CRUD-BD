@@ -1,10 +1,12 @@
 const express = require('express')
 require('dotenv').config()
-const db = require('./database/mongooseConnect')
-const pokemonRoutes = require('./routes/pokemonRoutes.js')
-const coachRoutes = require('.routes/coachRoutes.js')
+const cors = require('cors')
 
+const db = require('./database/mongooseConnect')
 const app = express()
+
+const pokemonRoutes = require('./routes/pokemonRoutes.js')
+const coachRoutes = require('./routes/coachRoutes.js')
 
 // configuracao
 app.use(express.json())
@@ -22,7 +24,7 @@ app.use(function (req, res, next) {
     next()
 })
 
-app.use("/", coachRoutes);
+app.use("/coach", coachRoutes);
 app.use("/pokemon", pokemonRoutes);
 
 module.exports = app;
