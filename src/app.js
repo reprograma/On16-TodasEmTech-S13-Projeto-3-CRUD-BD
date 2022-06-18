@@ -4,9 +4,10 @@ const express = require('express')
 const cors = require('cors')
 // importas db
 const mongoose = require('./database/mongooseConnect')
-// rotas
+// rotas treinadores
 const coachRoutes = require('./routes/coachRoutes')
-
+//rotas pokemon
+const pokedexRoutes = require('./routes/pokedexRoutes')
 // pra que app use express
 const app = express()
 
@@ -18,7 +19,9 @@ app.use(cors())
 
 // 3. conectar o banco
 mongoose.connect()
+
 app.use(coachRoutes)
+app.use(pokedexRoutes)
 
 // exportar app
 module.exports = app
