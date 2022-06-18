@@ -1,5 +1,7 @@
 // ligo express
 const express = require('express')
+//chamando cors
+const cors = require('cors')
 // ativando app
 const app = express()
 
