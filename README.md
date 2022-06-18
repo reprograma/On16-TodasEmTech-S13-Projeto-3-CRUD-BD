@@ -355,7 +355,7 @@ coach { // 'coach' nome da key 'chave' da schema
 - type: texto e obrigatório
 - abilities: array de texto, opcional e com default []
 - description: texto e opcional
-- avaliable: bolean e opcional com o default true
+
 
 ### API deve retornar seguinte JSON:
 

@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 const coachSchema = mongoose.Schema({
   _id: {
     type: mongoose.Schema.Types.ObjectId,
-    //       mongoose.Schema.Types.ObjectId   
     default: mongoose.Types.ObjectId
   },
 
