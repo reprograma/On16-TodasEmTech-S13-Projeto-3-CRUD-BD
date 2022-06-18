@@ -32,20 +32,53 @@ const createCoach = async(req, res) => {
 
 // get -> visualizar treinadores
 const findAllCoaches = async (req, res) => {
-    try {
+    try { 
         const allCoaches = await CoachModel.find()
+        // me retorna td
         res.status(200).json(allCoaches)
-    } catch (error) {
+    } catch (error) { // caso encontre um erro me aprensenta
         res.status(500).json({ 
             message: error.message
         })
     }
 }
 // get -> buscar por id
-// patch e delete por mangoose
+
+// patch
+const updateCoach = async (req, res) => {
+    try {
+        // o que vou alterar?
+        const { name, age, region, team, gender} = req.body       
+        // achar por id e atualizar pelo body dado
+        const updatedCoach = await CoachModel
+        .findByIdAndUpdate(req.params.id, 
+            {name, age, region, team, gender})
+        // retorna o que foi atualizado
+        res.status(200).json(updatedCoach)
+        //caso erro
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({ message: error.message})
+        }
+}
+
+// e delete por mangoose
+const deleteCoach = async (req, res) => {
+    try {
+        const { id } = req.params
+        await CoachModel.findByIdAndDelete(id)
+        const message = `O treinador com o id: ${id} foi deletado com sucesso!`
+        res.status(200).json({ message })
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({ message: error.message })
+    }
+}
 
 // exportando as funções
 module.exports = {
     createCoach,
-    findAllCoaches
+    findAllCoaches,
+    updateCoach,
+    deleteCoach
 }
