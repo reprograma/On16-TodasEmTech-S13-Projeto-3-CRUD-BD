@@ -79,6 +79,8 @@ Seguiremos a ordem de instalações no terminal:
    |  |
    |  |-📄 app.js
    |
+   |- 📄 .env
+   |- 📄 .env.example
    |- 📄 .gitignore
    |- 📄 package-lock.json
    |- 📄 package.json
