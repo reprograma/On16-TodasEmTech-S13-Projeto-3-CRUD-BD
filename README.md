@@ -136,8 +136,6 @@ Sendo assim precisaremos criar 5 rotas para Pokedex:
 
 ## 🎮 Treinadores
 
-</br>
-
 <br>✅ poder criar um treinador.
 <br>✅ poder retornar todos os treinadores.
 <br>✅ poder retornar o treinador com o id informado.
