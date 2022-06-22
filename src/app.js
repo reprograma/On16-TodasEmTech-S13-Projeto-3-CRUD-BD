@@ -1,21 +1,22 @@
+//importações
 const express = require('express')
 const cors = require('cors')
-const mongoose = require('./database/mongooseConnect')
+const dbmongoose = require('./database/mongooseConnect')
 const coachRoutes = require('./routes/coachRoutes')
 const pokedexRoutes = require('./routes/pokedexRoutes')
 
 const app = express()
 
-// 1. body parse
-// 2. deixar a api publica
-// 3. conectar o banco
+//body parse
 app.use(express.json())
+//deixa a api publica
 app.use(cors())
-
-mongoose.connect()
+//conecta o banco
+dbmongoose.connect()
 
 app.use(coachRoutes)
 app.use(pokedexRoutes)
 
+//exportação
 module.exports = app
 

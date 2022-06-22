@@ -1,5 +1,4 @@
-// 1. importa o app(api)
-// 2. definir uma porta e ouvi-la
+//importa o app(API)
 const app = require('./src/app')
-
-app.listen(8000, () => console.log(`fé no pai que agora vai, porta: 8000`))
+//define uma porta e ouvi-la
+app.listen(4000, () => console.log(`Porta funcionando 200 OK`))
