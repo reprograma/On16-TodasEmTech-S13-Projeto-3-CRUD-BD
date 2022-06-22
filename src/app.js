@@ -3,6 +3,7 @@ const cors = require('cors')
 const mongoose = require('./database/mongooseConnect')
 const coachRoutes = require('./routes/coachRoutes')
 const pokedexRoutes = require('./routes/pokedexRoutes')
+require("dotenv").config()
 
 const app = express()
 
