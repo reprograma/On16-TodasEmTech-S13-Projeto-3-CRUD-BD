@@ -1,4 +1,4 @@
-const PokedexModel = require('../models/pokedexModel')
+const PokedexModel = require('../models/pokedexModel');
 const CoachModel = require('../models/coachModel')
 
 const createPokemon = async (req, res) => {

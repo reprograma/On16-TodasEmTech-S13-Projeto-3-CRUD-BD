@@ -1,6 +1,6 @@
 const DATABASE_URI = "mongodb+srv://andrezapipolo:Shurim88@cluster0.ahda7mk.mongodb.net/reprograma"
 
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const connect = async() => {
    try {

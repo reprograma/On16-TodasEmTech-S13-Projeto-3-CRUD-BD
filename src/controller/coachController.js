@@ -1,5 +1,5 @@
 
-const CoachModel = require('../models/coachModel')
+const CoachModel = require('../models/coachModel');
 const createCoach = async (req, res) => {
    try {
       const { name, team, region, age, gender } = req.body
