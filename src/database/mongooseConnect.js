@@ -1,4 +1,4 @@
-const DATABASE_URI = "mongodb+srv://apimusica:1234abcd@cluster0.mt9gn.mongodb.net/projeto_db"
+const DATABASE_URI = "mongodb+srv://andrezapipolo:Shurim88@cluster0.ahda7mk.mongodb.net/reprograma"
 
 const mongoose = require('mongoose')
 
