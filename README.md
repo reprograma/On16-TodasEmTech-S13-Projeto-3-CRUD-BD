@@ -117,7 +117,6 @@ Sendo assim precisaremos criar 5 rotas para Pokedex:
 
 </br>
 
-
 ## 🕹️ Interface gráfica para realizar os testes Pokedex (Thunder Client ou Postman)
 
 </br>
@@ -131,8 +130,6 @@ Sendo assim precisaremos criar 5 rotas para Pokedex:
 **`DELETE`** Deletar um pokemon por id específico e retorna mensagem amigável | `localhost:1313/pokedex/`;
 
 **`PATCH`** Aterar informação específica dentro de um estudio por id específico e retorna o título alterado | `localhost:1313/pokedex/`;
-
-</br>
 
 ## 🎮 Treinadores
 
