@@ -5,8 +5,8 @@ const cors = require('cors')
 const db = require('./database/mongooseConnect')
 const app = express()
 
-const pokemonRoutes = require('./routes/pokemonRoutes.js')
-const coachRoutes = require('./routes/coachRoutes.js')
+const pokemonRoutes = require('./routes/pokedexRoutes.js')
+const coachRoutes = require('./routes/coachRoutes')
 
 // configuracao
 app.use(express.json())

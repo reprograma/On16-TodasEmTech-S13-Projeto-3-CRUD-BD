@@ -5,7 +5,7 @@ const coachSchema = mongoose.Schema({
 //gerando id automaticamente
     _id:{
         type: mongoose.Schema.Types.ObjectId,
-        default: mongoose.Schema.Types.ObjectId
+        default: mongoose.Types.ObjectId
     },
     name: {
         type: String,
@@ -27,4 +27,6 @@ const coachSchema = mongoose.Schema({
     }
 }, { timestamps: true })
 
-module.exports = coachSchema;
+
+const Model = mongoose.model('coach', coachSchema)
+module.exports = Model;
