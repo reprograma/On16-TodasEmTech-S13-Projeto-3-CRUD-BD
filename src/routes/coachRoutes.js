@@ -1,4 +1,3 @@
-
 const controller = require('../controller/coachController')
 const express = require('express')
 
