@@ -1,3 +1,5 @@
+// para habilitar variaveis de ambiente
+require('dotenv').config()
 // ligo express
 const express = require('express')
 //chamando cors

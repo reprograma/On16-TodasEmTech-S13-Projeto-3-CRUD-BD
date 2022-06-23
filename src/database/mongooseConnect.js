@@ -1,5 +1,5 @@
 // criando variavel para database
-const DATABASE_URI = "mongodb+srv://majob:santa1010@cluster0.g9wqfej.mongodb.net/projeto_db"
+const DATABASE_URI = process.env.DATABASE_URI
 
 // usar mongoose
 const mongoose = require('mongoose')
