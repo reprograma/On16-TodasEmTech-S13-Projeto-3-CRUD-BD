@@ -1,17 +1,3 @@
-// post -> criar um treinador
-//get -> visualizar todos os treinadores
-// get -> visualizar um treinador por ident
-//patch ->
-//delete ->
-
-/**
- *
- * const { name, age, team } = req.body
- * const age = req.body.age
- * const name = req.body.name
- * const team = req.body.team
- */
-
 const CoachModel = require("../models/coachModels");
 
 const createCoach = async (req, res) => {
@@ -31,7 +17,7 @@ const createCoach = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: error.message });
-  }
+  };
 };
 
 const findAllCoaches = async (req, res) => {
@@ -41,7 +27,7 @@ const findAllCoaches = async (req, res) => {
   } catch {
     console.log(error);
     res.status(500).json({ message: error.message });
-  }
+  };
 };
 
 const findCoachById = async (req, res) => {
@@ -51,7 +37,7 @@ const findCoachById = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: error.message });
-  }
+  };
 };
 
 const updateCoach = async (req, res) => {
@@ -69,7 +55,7 @@ const updateCoach = async (req, res) => {
   } catch {
     console.error(error);
     res.status(500).json({ message: error.message });
-  }
+  };
 };
 
 const deleteCoach = async (req, res) => {
@@ -81,7 +67,7 @@ const deleteCoach = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: error.message });
-  }
+  };
 };
 
 module.exports = {
