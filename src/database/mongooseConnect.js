@@ -1,10 +1,11 @@
-const DATABASE_URI = "mongodb+srv://NathCaldas:Bento26@cluster0.5ldtt.mongodb.net/projeto_db"
+const DATABASE_URI = process.env.DATABASE_URI
+//const DATABASE_URI = "mongodb+srv://NathCaldas:Bento26@cluster0.5ldtt.mongodb.net/projeto_db"
 
 const mongoose = require('mongoose')
 
 const connect = async() => {
    try {
-     await mongoose.connect(DATABASE_URI, {
+     mongoose.connect(DATABASE_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true
      })
