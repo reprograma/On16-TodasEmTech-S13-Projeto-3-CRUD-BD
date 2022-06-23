@@ -1,20 +1,19 @@
-const DATABASE_URI = process.env.DATABASE_URI
+const DATABASE_URI = process.env.DATABASE_URI;
 
 const mongoose = require('mongoose')
 
-const connect = async() => {
-   try {
-     await mongoose.connect(DATABASE_URI, {
+const connect = async () => {
+  try {
+    mongoose.connect(DATABASE_URI, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
-     })
-
-     console.log('banco conectado! ')
-   } catch (error) {
-    console.error(error)
-   }
-}
+      useUnifiedTopology: true,
+    });
+    console.log("Database connected");
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 module.exports = {
-  connect
-}
+  connect,
+};
