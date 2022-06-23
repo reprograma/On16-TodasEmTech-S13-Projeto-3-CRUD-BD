@@ -77,8 +77,9 @@ const updateCoach = async (req, res) => {
 const deleteCoach = async (req, res) => {
     try {
         const { id } = req.params
+        const deletedCoach = await CoachModel.findByIdAndDelete(id)
         await CoachModel.findByIdAndDelete(id)
-        const message = `O treinador com o id: ${id} foi deletado com sucesso!`
+        const message = `O treinador com o ${deletedCoach.name} foi deletado com sucesso!`
         res.status(200).json({ message })
     } catch (error) {
         console.error(error)
