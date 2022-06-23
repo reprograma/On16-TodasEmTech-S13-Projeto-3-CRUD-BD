@@ -1,17 +1,3 @@
-
-// post -> criar um treinador
-// get -> visualizar todos os treinadores
-// get -> visualizar um treinador por id
-// patch -> 
-// delete ->
-
-/**
- * 
- * const { name, age, team } = req.body
- * const age = req.body.age
- * const name = req.body.name
- * const team = req.body.team
- */
 const CoachModel = require('../models/coachModel')
 const createCoach = async (req, res) => {
    try {
@@ -67,8 +53,8 @@ const updateCoach = async (req, res) => {
 const deleteCoach = async (req, res) => {
    try {
        const { id } = req.params
-       const deletedCoach = await CoachModel.findByIdAndDelete(id) 
-       const message = `O treinador com o ${deletedCoach.name} foi deletado com sucesso!`
+       await CoachModel.findByIdAndDelete(id)
+       const message = `O treinador com o ${id} foi deletado com sucesso!`
       res.status(200).json({ message })
    } catch (error) {
      console.error(error)
@@ -77,5 +63,9 @@ const deleteCoach = async (req, res) => {
 }
 
 module.exports =  {
-  createCoach, findAllCoaches, updateCoach, deleteCoach, findCoachById
+  createCoach,
+  findAllCoaches,
+  updateCoach,
+  deleteCoach,
+  findCoachById
 }

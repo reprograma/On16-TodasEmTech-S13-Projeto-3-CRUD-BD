@@ -1,9 +1,11 @@
+
 touch .gitignore
 touch server.js
 npm init -y
 npm i express cors
 npm i -D nodemon
 npm i mongoose
+npm i --save-dev dotenv
 mkdir src
 touch src/app.js
 
@@ -12,8 +14,3 @@ conecto o banco [x]
 criou a model [x]
 criar a controller <
 criar as rotas e importar no app
-
-
-const dburi = "dados..."
-npm i dotenv
-const DBURI = process.env.DBURI
