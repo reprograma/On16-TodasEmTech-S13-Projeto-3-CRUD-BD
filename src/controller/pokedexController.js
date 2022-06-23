@@ -104,6 +104,5 @@ module.exports = {
   findAllPokemons,
   findPokemonById,
   updatePokemonById,
-  updatePokemonById,
   deletePokemon,
 };
