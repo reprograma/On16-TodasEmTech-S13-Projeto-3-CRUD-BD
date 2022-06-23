@@ -83,11 +83,29 @@ const updatePokemonById = async (request, response) => {
       response.status(500).json({ message: error.message });
     }
   };
+
+const deletePokemonById = async (request, response) => {
+    try {
+      const { id } = request.params
+      const findPokemon = await PokedexModel.findById(id)
+     
+      if(findPokemon == null){
+        return response.status(404).json({message: `O pokemon com o id# ${id} não foi encontrado`})
+      }
+  
+      await findPokemon.remove()
+  
+      response.status(200).json({message: `O pokemon ${findPokemon.name} foi deletado com sucesso.`})
+    } catch(error) {
+      response.status(500).json({message:error.message})
+    }
+}
   
 
 module.exports = {
     createPokemon,
     findAllPokemons,
     findPokemonById,
-    updatePokemonById
+    updatePokemonById,
+    deletePokemonById
 }
