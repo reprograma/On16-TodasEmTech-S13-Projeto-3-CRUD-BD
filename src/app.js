@@ -7,16 +7,15 @@ const pokedexRoutes = require('./routes/pokedexRoutes')
 
 const app = express()
 
-// 1. body parse
-// 2. deixar a api publica
+// 1. body parser
+// 2. deixar api publication
 // 3. conectar o banco
+
 app.use(express.json())
 app.use(cors())
-
 mongoose.connect()
 
 app.use(coachRoutes)
 app.use(pokedexRoutes)
 
 module.exports = app
-

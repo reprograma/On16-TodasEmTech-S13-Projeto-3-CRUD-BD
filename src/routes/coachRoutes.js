@@ -1,5 +1,5 @@
-// 1.controller
-// 2. ajuda do express
+// 1. importar controller
+// 2. ajuda do express para criar as rotas
 
 const controller = require('../controller/coachController')
 const express = require('express')
@@ -13,3 +13,4 @@ router.patch("/treinador/:id", controller.updateCoach)
 router.delete("/treinador/:id", controller.deleteCoach)
 
 module.exports = router
+

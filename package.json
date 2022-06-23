@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reprograma/On16-TodasEmTech-S13-Projeto-3-CRUD-BD.git"
+    "url": "git+https://github.com/Rosiene10/On16-TodasEmTech-S13-Projeto-3-CRUD-BD.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/reprograma/On16-TodasEmTech-S13-Projeto-3-CRUD-BD/issues"
+    "url": "https://github.com/Rosiene10/On16-TodasEmTech-S13-Projeto-3-CRUD-BD/issues"
   },
-  "homepage": "https://github.com/reprograma/On16-TodasEmTech-S13-Projeto-3-CRUD-BD#readme",
+  "homepage": "https://github.com/Rosiene10/On16-TodasEmTech-S13-Projeto-3-CRUD-BD#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
