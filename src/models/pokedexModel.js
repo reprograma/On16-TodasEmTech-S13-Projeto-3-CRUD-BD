@@ -31,4 +31,6 @@ const PokedexSchema = mongoose.Schema({
 }, { timestamps: true })
 
 const Model = mongoose.model('pokedex', PokedexSchema)
+
+
 module.exports = Model

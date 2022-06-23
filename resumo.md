@@ -12,8 +12,3 @@ conecto o banco [x]
 criou a model [x]
 criar a controller <
 criar as rotas e importar no app
-
-
-const dburi = "dados..."
-npm i dotenv
-const DBURI = process.env.DBURI
