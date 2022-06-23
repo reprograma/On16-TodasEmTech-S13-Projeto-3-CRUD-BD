@@ -1,4 +1,3 @@
-
 const PokedexModel = require('../models/pokedexModel')
 const CoachModel = require('../models/coachModel')
 
