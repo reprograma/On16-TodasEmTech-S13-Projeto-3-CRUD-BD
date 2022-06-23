@@ -15,7 +15,10 @@ const createPokemon = async (req, res) => {
       return res.status(404).json({ message: 'Treinador não foi encontrado'})
      }
 
-     // -->
+     /**
+      * new PokedexModel -> a gente gera um novo MODELO de um pokemon
+      * com base na Schema
+      */
      const newPokemon = new PokedexModel({
       coach: coachId,
       name, type, abilities, description
@@ -90,7 +93,24 @@ const updatePokemonById = async (req, res) => {
   }
 }
 
+const deletePokemonById = async (req, res) => {
+  try {
+    const { id } = req.params
+    const findPokemon = await PokedexModel.findById(id)
+
+    if (findPokemon == null) {
+      return res.status(404).json({ message: `O pokemon com o id# ${id} não foi encontrado.`})
+    }
+
+    await findPokemon.remove()
+
+    res.status(200).json({ message : `O pokemon ${findPokemon.name} foi deletado com sucesso.` })
+  } catch (error) {
+    res.status(500).json({ message : error.message})
+  }
+} 
+
 module.exports = {
-   createPokemon, findAllPokemons, findPokemonById, updatePokemonById
+   createPokemon, findAllPokemons, findPokemonById, updatePokemonById, deletePokemonById
 
 }
