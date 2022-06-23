@@ -1,5 +1,5 @@
 const PokedexModel = require("../models/pokedexModel");
-const CoachModel = require("../models/coachModels");
+const CoachModel = require("../models/coachModel");
 
 const createPokemon = async (req, res) => {
   try {
