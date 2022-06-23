@@ -8,5 +8,5 @@ router.post("/pokedex", controller.createPokemon)
 router.get("/findAll", controller.findAllPokemons)
 router.get("/getById/:id", controller.findPokemonById)
 router.patch("update/:id", controller.updatePokemonById)
-
+router.delete("/pokedex/:id", controller.deletePokemonById)
 module.exports = router

@@ -57,31 +57,47 @@ const findPokemonById = async (req, res) => {
 const updatePokemonById = async (req, res) => {
   try {
     const { id } = req.params;
-    const {coachId, name, types, abilities, description} = req.body
+    const { coachId, name, types, abilities, description } = req.body;
     const findPokemon = await PokedexModel.findById(id);
     if (findPokemon == null) {
       return res.status(404).json({ message: "pokemon nao encontrado" });
     }
-    if(coachId){
-        const findCoach = await CoachModel.findById(coachId)
-        if (coachId == null){
-            return res.status(404).json({message: "Treinador não encontrado"})
-        }
+    if (coachId) {
+      const findCoach = await CoachModel.findById(coachId);
+      if (coachId == null) {
+        return res.status(404).json({ message: "Treinador não encontrado" });
+      }
     }
-    findPokemon.name = name || findPokemon.name
-    findPokemon.type = type || findPokemon.type
-    findPokemon.abilities = abilities || findPokemon.abilities
-    findPokemon.description = description || findPokemon.description
-    findPokemon.coach = coachId || findPokemon.coach
+    findPokemon.name = name || findPokemon.name;
+    findPokemon.type = type || findPokemon.type;
+    findPokemon.abilities = abilities || findPokemon.abilities;
+    findPokemon.description = description || findPokemon.description;
+    findPokemon.coach = coachId || findPokemon.coach;
 
-    const savePokemon = await findPokemon.save()
-    res.status(200).json(savedPokemon)
+    const savePokemon = await findPokemon.save();
+    res.status(200).json(savedPokemon);
   } catch (error) {}
+};
+
+const deletePokemonById = async (req, res) => {
+  try {
+    const {id} = req.params
+    const findPokemon = await PokedexModel.findById(id);
+
+    if (!findPokemon == null) {
+      return res.status(404).json({message: `Pokemon not found by ${id}`})
+    }
+    await findPokemon.remove()
+    res.status(200).json({message: "O pokemon foi  deletado"})
+  } catch (error) {
+res.status(500).json({message: error.message })
+  }
 };
 
 module.exports = {
   createPokemon,
   findAllPokemons,
   findPokemonById,
-  updatePokemonById
+  updatePokemonById,
+  deletePokemonById
 };
