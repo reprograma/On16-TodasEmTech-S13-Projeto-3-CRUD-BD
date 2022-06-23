@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
 
-// name, team, insignia, pokemons, region, age, trofel, gender
-
 const coachSchema = mongoose.Schema(
   {
     _id: {
@@ -10,12 +8,12 @@ const coachSchema = mongoose.Schema(
     },
 
     name: {
-      type: String, // representa texto
-      required: true, //campo obrigatorio
-      unique: true, // eu digo que não aceito mais de um nome no sistema
+      type: String,
+      required: true,
+      unique: true,
     },
 
-    team: String, // se não for obrigatorio e for so uma informação não precisa de "{}"
+    team: String,
 
     region: {
       type: String,
@@ -33,7 +31,7 @@ const coachSchema = mongoose.Schema(
     },
   },
   { timestamps: true }
-); // gera automaticamente
+);
 
 const Model = mongoose.model("coach", coachSchema);
 

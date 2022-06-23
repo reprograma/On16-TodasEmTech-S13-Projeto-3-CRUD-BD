@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
 
-// name, team, insignia, pokemons, region, age, trofel, gender
-
 const PokedexSchema = mongoose.Schema(
   {
     _id: {
