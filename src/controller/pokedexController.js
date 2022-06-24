@@ -43,26 +43,22 @@ const findAllPokemons = async (req, res) => {
  const findPokemonById = async(req, res) => {
     try{
         const findPokemon = await PokedexModel
-         findById(req.params.id).populate('coach')
+        .findById(req.params.id).populate('coach')
 
-            if (findPokemon == null){
-                return res.status(404).json({ message: "pokemon não encontrado"})
+        if (findPokemon == null){
+            return res.status(404).json({ message: "pokemon não encontrado"})
                 }
-                res.status(200).json(findPokemon)
-            } catch (error){
-                res.status(500).json({ message: error.message})
+            res.status(200).json(findPokemon)
+    } catch (error){
+            res.status(500).json({ message: error.message})
             }   
         }
     
         
         
-        
-        
-        
-        
- const updatePokemonById = async (req, res) => {
+const updatePokemonById = async (req, res) => {
     try{
-        const {id } = req.params
+        const { id } = req.params
         const { coachId, name, type, abilities, description} = req.body
         const findPokemon = await PokedexModel.findById(id)
         if (findPokemon == null){
@@ -79,7 +75,7 @@ const findAllPokemons = async (req, res) => {
             findPokemon.type = type || findPokemon.type
             findPokemon.abilities = abilities || findPokemon.abilities
             findPokemon.description = description || findPokemon.description
-            findPokemon.coach = coachId || findPokemonCoach.coach
+            findPokemon.coach = coachId || findPokemon.coach
 
             const savedPokemon = await findPokemon.save()
             res.status(200).json(savedPokemon)
