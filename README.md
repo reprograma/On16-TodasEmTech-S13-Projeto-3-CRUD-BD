@@ -424,15 +424,21 @@ coach { // 'coach' nome da key 'chave' da schema
 <br>
 <br>
 
-#  Muito obrigada a você que chegou até aqui! 💜 </h2>
+<span align="center">
+
+#  Muito obrigada a você que chegou até aqui! 💜 </h2> 
+
+</span>
+
+<span align="center">
+
+![equipe_rocket](https://user-images.githubusercontent.com/101025726/175441089-ebfe9426-bb5b-4ba4-9216-cf6b33ddacc1.gif)
+
+</span>
 
 <br>
 <br>
 
-
-
-
-<br>
 <br>
 
 ## 👋🏾 Minhas redes sociais
