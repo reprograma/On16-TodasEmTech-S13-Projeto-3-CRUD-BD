@@ -1,11 +1,10 @@
-// 1.controller
-// 2. ajuda do express
-
+//Importações 
 const controller = require('../controller/coachController')
 const express = require('express')
 
 const router = express.Router()
 
+//Rotas
 router.post("/treinador", controller.createCoach)
 router.get("/treinadores", controller.findAllCoaches)
 router.get("/treinadores/:id", controller.findCoachById)

@@ -23,3 +23,7 @@
 <br> > criar a pasta modelo com arquivos model treinador e posteriormente pokemons
 <br> > criar a controller 
 <br> > criar as rotas e importar no app
+
+> const DBURI = process.env.DBURI
+> variáveis de ambiente tem que ser maíusculas
+> Tem que instalar o dontev. npm i dontenv no terminal

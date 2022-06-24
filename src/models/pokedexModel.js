@@ -1,3 +1,4 @@
+//Importações
 const mongoose = require('mongoose')
 
 const PokedexSchema = mongoose.Schema({

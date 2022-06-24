@@ -1,5 +1,5 @@
 //Importações
-const DATABASE_URI = "mongodb+srv://CDias:123reprograma@cluster0.6yb8f.mongodb.net/projeto_db"
+const DATABASE_URI = process.env.DATABASE_URI
 const mongoose = require('mongoose')
 
 //função de conexão com o banco de dados

@@ -1,18 +1,8 @@
-
-// post -> criar um treinador
-// get -> visualizar todos os treinadores
-// get -> visualizar um treinador por id
-// patch -> 
-// delete ->
-
-/**
- * 
- * const { name, age, team } = req.body
- * const age = req.body.age
- * const name = req.body.name
- * const team = req.body.team
- */
+//Importação do CoachModel para acesso em código específico
 const CoachModel = require('../models/coachModel')
+
+//Códigos API
+//Cria novo treinador. Verbo POST
 const createCoach = async (req, res) => {
    try {
       const { name, team, region, age, gender } = req.body
@@ -30,6 +20,7 @@ const createCoach = async (req, res) => {
    }
 }
 
+//Retorna lista de coaches criados. Verbo GET
 const findAllCoaches = async (req, res) => {
   try {
     const allCoaches = await CoachModel.find()
@@ -40,6 +31,7 @@ const findAllCoaches = async (req, res) => {
   }
 }
 
+//Retorna coach por ID especificado. Verbo GET
 const findCoachById = async (req, res) => {
    try {
      const findCoach = await CoachModel.findById(req.params.id)
@@ -50,6 +42,7 @@ const findCoachById = async (req, res) => {
    }
 }
 
+//Atualiza coach. Verbo PUT
 const updateCoach = async (req, res) => {
   try {
     const { name, age, region, team, gender } = req.body
@@ -64,6 +57,7 @@ const updateCoach = async (req, res) => {
   }
 }
 
+//Deleta coach. Verbo DELETE
 const deleteCoach = async (req, res) => {
    try {
        const { id } = req.params
