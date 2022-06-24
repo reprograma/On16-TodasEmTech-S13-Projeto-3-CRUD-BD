@@ -300,7 +300,7 @@ coach { // 'coach' nome da key 'chave' da schema
 
 ### Regras de negócio
 
-- [ ]  Não deverá ser possível criar mais de um treinador com o mesmo nome
+- [ ]  Não deverá ser possível criar treinador com o mesmo nome
 - [ ]  Para criar um novo pokemon, deverá vincular no momento da criação a um treinador já existente no sistema, utilizando o numero do id do treinador correspondente no corpo da requisição
 
 <br>
@@ -356,7 +356,6 @@ coach { // 'coach' nome da key 'chave' da schema
 - abilities: array de texto, opcional e com default []
 - description: texto e opcional
 
-
 ### API deve retornar seguinte JSON:
 
 ```javascript
@@ -367,7 +366,6 @@ coach { // 'coach' nome da key 'chave' da schema
     type: 'Eletric',
     abilities: [ 'Static' ],
     description: 'Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.',
-    avaliable: true,
     coach: new ObjectId("62ab7c861ff392ef188b10fe"),
     createdAt: 2022-06-16T18:55:02.076Z,
     updatedAt: 2022-06-16T18:55:02.076Z,
@@ -379,7 +377,6 @@ coach { // 'coach' nome da key 'chave' da schema
     type: 'Eletric',
     abilities: [ 'Overgrow' ],
     description: 'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.',
-    avaliable: true,
     coach: new ObjectId("62ab7c861ff392ef188b10fe"),
     createdAt: 2022-06-16T18:55:02.084Z,
     updatedAt: 2022-06-16T18:55:02.084Z,
@@ -391,7 +388,6 @@ coach { // 'coach' nome da key 'chave' da schema
     type: 'Psychic',
     abilities: [ 'Shadow Tag' ],
     description: 'It hates light and shock. If attacked, it inflates its body to pump up its counterstrike.',
-    avaliable: true,
     coach: new ObjectId("62ab7c861ff392ef188b1104"),
     createdAt: 2022-06-16T18:55:02.095Z,
     updatedAt: 2022-06-16T18:55:02.095Z,
@@ -403,7 +399,6 @@ coach { // 'coach' nome da key 'chave' da schema
     type: 'Poison',
     abilities: [ 'Shed Skin', 'Intimidate' ],
     description: 'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.',
-    avaliable: true,
     coach: new ObjectId("62ab7c861ff392ef188b1104"),
     createdAt: 2022-06-16T18:55:02.102Z,
     updatedAt: 2022-06-16T18:55:02.102Z,

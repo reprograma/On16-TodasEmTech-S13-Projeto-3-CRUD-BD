@@ -1,7 +1,7 @@
-const express = require('express')
-const controller = require('../controller/pokedexController')
+const controller = require("../controller/pokedexController.js");
+const express = require("express");
 
-const router = express.Router()
+const router = express.Router();
 
 router.post("/pokedex", controller.createPokemon)
 router.get("/pokedex", controller.findAllPokemons)

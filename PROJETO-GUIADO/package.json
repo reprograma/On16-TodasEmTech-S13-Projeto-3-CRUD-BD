@@ -1,0 +1,21 @@
+{
+  "name": "projeto3-reprograma",
+  "version": "1.0.0",
+  "description": "Projeto Guidado 3 - Sistema de gerenciamento de pokemons e treinadores",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "anairam_fn",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
