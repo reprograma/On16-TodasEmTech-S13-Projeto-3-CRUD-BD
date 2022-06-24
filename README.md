@@ -1,26 +1,15 @@
-# On16-TodasEmTech-S13-Projeto-3-CRUD-BD
-Turma Online 16 - Todas em Tech | Back-end | 2022 | Semana 13 - Projeto Guiado CRUD com MongoDB
+# Semana 13 - Projeto Guiado CRUD com MongoDB
 
-## Olá, prazer em conhece-las💜
+<br>
 
-Um pouquinho sobre mim.  Meu nome é Beatriz Ramerindo, sou engenheira de software, não possui faculdade, trabalho com enfãse em desenvolvimento back-end de produto, nas stacks de Spring com Koltin e e Express/Node com Typescript/Javascript.  Sou tão apaixonada por Js que ganhei uma caneca da mesma, apaixonada que só né, amo falar sobre, mas porque raios afinal `0 + null = 0?`. Prazer em conhece-las, quem curtir ai um anime de um pirata que estica e/ou curti um lolzinho, chama no PV depois e bora criar umas teoria ai ou uma flex?
-
-- Chamada, apresentação das monitoras e acordos:
-
-<img src="https://i.pinimg.com/474x/b4/17/86/b41786b5e7627ed0c678a0ef4a62e9f6.jpg" alt="video chamada" width="200">
-
-* Caso queira fazer uma pergunta, levante a mão por favor.
-* Enviar as dúvidas no chat, assim minhas queridas monitoras podem ajudar.
-* Manter microfone desligado quando outras pessoas estiverem falando
-* Manter câmera ligada o máximo possível
-* momento de olho na tela, sim depois deixo copiar 😌
+## Projeto guiado  CRUD com MongoDB realizado com a professora Beatriz Ramerindo 🖥️
 
 <br>
 <br>
 
-## Revisão
 
-### `1. Por que precisamos de um banco de dados?`
+
+### `1. Por quê precisamos de um banco de dados?`
 
 Vantagens: 
 * Facilidade de acesso
@@ -119,12 +108,12 @@ const PokemonSchema = monogoose.Schema({
 
 #### `9. Passos para conectar o MongoDb usando mongoose:`
 
-1 - Crio minha configuracao de conexao no database, passando informacoes padrão e a minha string de conexão
+1 - Crio minha configuração de conexão no database, passando informações padrão e a minha string de conexão
 2 - Crio meu schema no model
 3 - requiro no app e chamo a função de conexão
 
 
-## [extra: 01] Dotenv - variaves de ambiente
+## [extra: 01] Dotenv - variáves de ambiente
 
 Essa dica com certeza dará mais maturidade aos seus códigos de backend.
 Afinal de contas dotenv é uma excelente ferramenta para gerenciar os dados sensíveis de desenvolvimento que não devem ser compartilhados como: chaves de API’s, informações do banco de dados, entre outras.
@@ -175,7 +164,7 @@ const pokemon = new Model({
 ```
 
 ### Métodos
-Como mencionamos em aulas passadas, assim como o objeto, as classes possuiem métodos, que são funções que nos auxiliam a realizar **ações** como por exemplo: salvar um pokemon, ou um ataque especial como shock do trovao, no nosso dia-a-dia usamos o console`.log`, *.log("hello word")* é um método que nos permite imprimir no terminal uma mensagem de texto.
+Assim como o objeto, as classes possuem métodos, que são funções que nos auxiliam a realizar **ações** como por exemplo: salvar um pokemon, ou um ataque especial como choque do trovão, no nosso dia-a-dia usamos o console`.log`, *.log("hello word")* é um método que nos permite imprimir no terminal uma mensagem de texto.
 
 #### Métodos relação com a nossa API
 
@@ -188,7 +177,7 @@ Como mencionamos em aulas passadas, assim como o objeto, as classes possuiem mé
 
 
 ### Constructor
-Nosso `constructor` é responsável por inicializar a nossa classe, ele recebe os parametros para criar construir a instancia da classe, como por exemplo, nossa música, é assim que nossa Schema gera a música no formato que o banco espera, no caso do mongo, um BJSON.
+Nosso `constructor` é responsável por inicializar a nossa classe, ele recebe os parâmetros para criar e construir a instância da classe, como por exemplo, nossa música, é assim que nossa Schema gera a música no formato que o banco espera, no caso do mongo, um BJSON.
 
 ### Tipagem - Tipos primários
 Na programação, existem tipos primários, que são responsáveis por definir o tipo de informação ( dado ) que estamos trabalhando, por exemplo um número de celular `Number`, ou um email que é texto `String`, ou até mesmo se é verdadeiro(true) ou falso(false) que é um `Boolean`, além disso, temos o `Date` que representa uma data. 
@@ -220,8 +209,8 @@ Onde receberemos cadastros de pokemons referenciando cada ao seu respectivo trei
  // "Relacionamento" no MongoDB? Como é isso?
 
 coach { // 'coach' nome da key 'chave' da schema
-  type: mongoose.Schema.Types.ObjectId, // id de referencia,
-  ref: 'coach' // colection de referencia
+  type: mongoose.Schema.Types.ObjectId, // id de referência,
+  ref: 'coach' // collection de referência
 }
 
 ```
@@ -236,7 +225,7 @@ coach { // 'coach' nome da key 'chave' da schema
 | `mongoose` | Dependência que interage com o MongoDB para a conexão da database, criação do model e das collections|
 | `nodemon` | Dependência que observa as atualizações realizadas nos documentos para rodar o servidor automaticamente|
 | `npm ou yarn` | Gerenciador de pacotes|
-| `MongoDb` | Banco de dado não relacional orietado a documentos|
+| `MongoDb` | Banco de dado não relacional orientado a documentos|
 | `MongoDb Compass ou Mongo Atlas` | Interface gráfica para verificar se os dados foram persistidos|
  `Insomnia ou Postman` | Interface gráfica para realizar os testes|
 
@@ -301,7 +290,7 @@ coach { // 'coach' nome da key 'chave' da schema
 ### Regras de negócio
 
 - [ ]  Não deverá ser possível criar treinador com o mesmo nome
-- [ ]  Para criar um novo pokemon, deverá vincular no momento da criação a um treinador já existente no sistema, utilizando o numero do id do treinador correspondente no corpo da requisição
+- [ ]  Para criar um novo pokemon, deverá vincular no momento da criação a um treinador já existente no sistema, utilizando o número do id do treinador correspondente no corpo da requisição
 
 <br>
 <br>
@@ -310,7 +299,7 @@ coach { // 'coach' nome da key 'chave' da schema
 
 - _id: autogerado e obrigatório
 - name: texto e obrigatório
-- age: numero e obrigatorio
+- age: número e obrigatório
 - team: texto e opcional
 - gender: texto, opcional e com default 'não informado'
 - region: texto e opcional
@@ -415,9 +404,6 @@ coach { // 'coach' nome da key 'chave' da schema
 <br>
 
 
-##  🎓 Combinado da semana
- - [PARA O LAR](./para_o_lar//instru%C3%A7%C3%B5es.md) < clique aqui
-
 ## 📖 Referências
 - https://www.gartner.com/en/information-technology/glossary/object-data-model
 - https://medium.com/tkssharma/node-js-with-mongoose-odm-9697c09665df
@@ -435,10 +421,22 @@ coach { // 'coach' nome da key 'chave' da schema
 - [nodeJs Express Mongo - Api rest full Turitorial](https://www.youtube.com/watch?v=K5QaTfE5ylk)
 - [O que é banco de dados? - Curso em Video](https://www.youtube.com/watch?v=Ofktsne-utM)
 
+<br>
+<br>
+
+#  Muito obrigada a você que chegou até aqui! 💜 </h2>
+
+<br>
+<br>
+
+
+
+
+<br>
+<br>
+
 ## 👋🏾 Minhas redes sociais
- - [LINKEDIN](https://www.linkedin.com/in/beatriz-ramerindo/)
- - [GITHUB](https://github.com/isjanebia)
- - [INSTAGRAN](https://www.instagram.com/isjanebea/)
- - [site] [beatriz.rarmerindo.com.br](beatriz.ramerindo.com.br)
- - [email] bea@ramerindo.com.br
+ - [LINKEDIN](https://www.linkedin.com/in/loui-costa/)
+ - [GITHUB](https://github.com/louicosta)
+
 
