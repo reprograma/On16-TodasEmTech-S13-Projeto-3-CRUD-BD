@@ -70,7 +70,7 @@ const updateCoach = async (req, res) => {
 
 // delete -> coach by id
 
-deleteCoach = async (req, res) => {
+const deleteCoach = async (req, res) => {
   try {
     const { id } = req.params;
 

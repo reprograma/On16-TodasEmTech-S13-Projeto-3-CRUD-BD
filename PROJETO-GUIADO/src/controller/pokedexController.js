@@ -1,6 +1,5 @@
 const PokedexModel = require("../models/pokedexModel.js");
 const CoachModel = require("../models/coachModel.js");
-const { find } = require("../models/pokedexModel.js");
 
 const createPokemon = async (req, res) => {
   try {
@@ -32,7 +31,7 @@ const createPokemon = async (req, res) => {
   }
 };
 
-const fildAllPokemons = async (req, res) => {
+const findAllPokemons = async (req, res) => {
   try {
     const allPokemons = await PokedexModel.find().populate("coach");
 
@@ -45,8 +44,9 @@ const fildAllPokemons = async (req, res) => {
 
 const findPokemonById = async (req, res) => {
   try {
-    const findPokemon = await PokedexModel
-    .findById(req.params.id).populate("coach");
+    const findPokemon = await PokedexModel.findById(req.params.id).populate(
+      "coach"
+    );
 
     if (findPokemon == null) {
       return res.status(404).json({ message: "Pokemon not found!" });
@@ -69,7 +69,6 @@ const findPokemonById = async (req, res) => {
 const updatePokemonById = async (req, res) => {
   try {
     const { id } = req.params;
-
     const { coachId, name, type, abilities, description } = req.body;
 
     const findPokemon = await PokedexModel.findById(id);
@@ -92,6 +91,7 @@ const updatePokemonById = async (req, res) => {
     findPokemon.coach = coachId || findPokemon.coach;
 
     const savedPokemon = await findPokemon.save();
+    
     res.status(200).json(savedPokemon);
   } catch (error) {
     console.error(error);
@@ -101,26 +101,30 @@ const updatePokemonById = async (req, res) => {
 
 const deletePokemonById = async (req, res) => {
   try {
-    const {id } = req.params
-  const findPokemon = await PokedexModel.findById(id)
+    const { id } = req.params;
+    const findPokemon = await PokedexModel.findById(id);
 
-  if (findPokemon == null) {
-    return res.status(404).json({message: `Pokemon with ID ${id} not found`})
+    if (findPokemon == null) {
+      return res
+        .status(404)
+        .json({ message: `Pokemon with ID ${id} not found` });
+    }
+
+    await findPokemon.delete();
+
+    res
+      .status(200)
+      .json({ message: `Pokemon ${findPokemon.name} successfully deleted!` });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: error.message });
   }
-
-  await findPokemon.delete()
-
-  res.status(200).json({ message: `Pokemon ${findPokemon.name} successfully deleted!`})
-} catch (error) {
-  console.error(error)
-  res.status(500).json({message: error.message})
-}}
-
+};
 
 module.exports = {
   createPokemon,
-  fildAllPokemons,
+  findAllPokemons,
   findPokemonById,
   updatePokemonById,
-  deletePokemonById
+  deletePokemonById,
 };
