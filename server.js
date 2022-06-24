@@ -2,6 +2,6 @@
 // 2. definir uma porta e ouvi-la
 const app = require('./src/app')
 
-const PORT = process.env.PORT
+const PORT = 8000
 
-app.listen(PORT, () => console.log(`fé no pai que agora vai, porta: 8000`))
+app.listen(PORT, () => console.log(`fé no pai que agora vai, porta: ${PORT}`))

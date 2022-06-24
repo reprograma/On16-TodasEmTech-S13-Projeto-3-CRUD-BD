@@ -5,13 +5,6 @@
 // patch -> 
 // delete ->
 
-/**
- * 
- * const { name, age, team } = req.body
- * const age = req.body.age
- * const name = req.body.name
- * const team = req.body.team
- */
 const CoachModel = require('../models/coachModel')
 const createCoach = async (req, res) => {
    try {
@@ -68,7 +61,7 @@ const deleteCoach = async (req, res) => {
    try {
        const { id } = req.params
        const deletedCoach = await CoachModel.findByIdAndDelete(id) 
-       const message = `O treinador com o ${deletedCoach.name} foi deletado com sucesso!`
+       const message = `O treinador ${deletedCoach.name} foi deletado com sucesso!`
       res.status(200).json({ message })
    } catch (error) {
      console.error(error)
