@@ -3,7 +3,7 @@ const CoachModel = require('../models/coachModel')
 
 const createPokemon = async (req, res) => {
    try {
-     const { coachId, name, type, abilities, description } = req.body //  <-
+     const { coachId, name, type, abilities, description } = req.body 
      
      if (!coachId) {
        return res.status(400).json({ message: 'É obrigatorio o id do treinador'})
@@ -15,10 +15,7 @@ const createPokemon = async (req, res) => {
       return res.status(404).json({ message: 'Treinador não foi encontrado'})
      }
 
-     /**
-      * new PokedexModel -> a gente gera um novo MODELO de um pokemon
-      * com base na Schema
-      */
+
      const newPokemon = new PokedexModel({
       coach: coachId,
       name, type, abilities, description
@@ -58,12 +55,6 @@ const findPokemonById = async(req, res) => {
   }
 }
 
-/**
- * 
- * 1. verificar se o pokemon existe [ x ]
- * 2. verificar se o coachId recebido existe
- * 3. verificar se o dado recebido é valido
- */
 const updatePokemonById = async (req, res) => {
   try {
     const { id } = req.params
