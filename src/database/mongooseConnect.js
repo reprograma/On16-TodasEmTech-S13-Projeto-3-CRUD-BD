@@ -1,5 +1,4 @@
-const DATABASE_URI =
-  "mongodb+srv://louicosta:Lcj-nzX86_SeKpi@cluster0.fglpw.mongodb.net/projeto_db";
+const DATABASE_URI = process.env.DATABASE_URI
 
 const mongoose = require("mongoose");
 
