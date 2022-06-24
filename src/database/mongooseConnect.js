@@ -2,7 +2,6 @@ const DATABASE_URI = process.env.DATABASE_URI
 
 const mongoose = require('mongoose')
 
-//função de conexão com o banco
 const connect = async() => {
    try {
      await mongoose.connect(DATABASE_URI, {
@@ -17,5 +16,5 @@ const connect = async() => {
 }
 
 module.exports = {
-    connect
+  connect
 }
