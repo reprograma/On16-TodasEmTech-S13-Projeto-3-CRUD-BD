@@ -1,4 +1,3 @@
-const { response } = require("express");
 const CoachModel = require("../models/coachModel");
 
 const createCoach = async (req, res) => {
@@ -59,12 +58,13 @@ const updateCoach = async (req, res) => {
   }
 };
 
-deleteCoach = async (req, res) => {
+const deleteCoach = async (req, res) => {
   try {
     const { id } = req.params;
-    await CoachModel.findByIdAndDelete(id);
-    const message = `O treinador com o ${id} foi deletado com sucesso`;
+    const deletedCoach = await CoachModel.findByIdAndDelete(id)
+    const message = `O treinador com o ${deletedCoach.name} foi deletado com sucesso`
     res.status(200).json({ message });
+ 
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: error.message });

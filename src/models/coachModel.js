@@ -29,7 +29,7 @@ const coachSchema = mongoose.Schema({
         default: 'Não informado'
     }
 
-}, { timestamps: true });
+}, { timestamps: true }); //gera automaticamente as datas de atualização e criação;
 
 const Model = mongoose.model('coach', coachSchema);
 
