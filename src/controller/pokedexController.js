@@ -1,119 +1,110 @@
- const PokedexModel = require('../models/pokedexModel')
- const CoachModel = require('../models/  coachModel')
-const { now } = require('mongoose')
+const PokedexModel = require("../models/pokedexModel")
+const CoachModel = require("../models/coachModel")
 
- const createPokemon = async (req, res) => {
-  try {
-    const { coachId, name, type, abilities, description } = req.body //  <-
-    
-    if (!coachId) {
-      return res.status(400).json({ message: 'É obrigatorio o id do treinador'})
-     }
+const createPokemon = async (request, response) => {
+    try{
+        const { coachId, name, type, abilities, description } = request.body
 
-     const findCoach = await CoachModel.findById(coachId)
-     
-    if (!findCoach) {
-     return res.status(404).json({ message: 'Treinador não foi encontrado'})
+        if(!coachId) {
+            return response.status(400).json({message:"É obrigatório o id do treinador"})
+        }
+
+        const findCoach = await CoachModel.findById(coachId)
+
+        if(!findCoach) {
+            return response.status(404).json({message:"Treinador não encontrado"})
+        }
+
+        const newPokemon = new PokedexModel({
+            coach: coachId,
+            name, type, abilities, description
+        })
+
+        const savedPokemon = await newPokemon.save()
+        response.status(200).json(savedPokemon)
+
+    } catch(error) {
+        console.error(error)
+        response.status(500).json({message: error.message})
     }
-
-    /**
-     * new PokedexModel -> a gente gera um novo MODELO de um pokemon
-     * com base na Schema
-     */
-    const newPokemon = new PokedexModel({
-     coach: coachId,
-     name, type, abilities, description
-    })
-
-    const savedPokemon = await newPokemon.save()
-
-    res.status(200).json(savedPokemon)
-
-  } catch (error) {
-   console.error(error)
-   res.status(500).json({ message: error.message })
-  }
-}
-    
-const findAllPokemons = async (req,res)=>{
-  try{
-    const allPokemons = await PokedexModel.find().populate("coach")
-    res.status(200).json (allPokemons)
-  }catch(error){
-    res.status(500).json({
-      message: error.message
-    })
-  }
-}
-const findPokemonById = async (req, res) => {
-  try{
-   const findPokemon =await PokedexModel.findById(req.params.id).populate("coach")
-   if (findPokemon == null){ 
-     return res.status(404).json({
-       message:"o id nao encontrado"
-     })
-   }
-   res.status(200).json(findPokemon)
-  }catch(error){
-     res.status(500).json({
-       message:error.message
-     })
-  }
 }
 
-const updatePokemonById = async(req,res) => {
-  try{
-   const {id} = req.params
-   const {coachId, name, type, abilities, description} = req.body
-   const findPokemon = await PokedexModel.findById(id)
-
-   if (findPokemon == null) {
-     return res.status(404).json ({
-       message: "o pokemon nao foi encontrado"
-     })
-   }
-   if(coachId){
-     const findCoach = await CoachModel.findById(coachId)
-     if (findCoach == null){
-       return res.status(404).json ({
-         message:"o treinador nao foi encontrado"
-       })
-     }
-   }
-  findPokemon.name = name
-  findPokemon.type = type
-  findPokemon.abilities = abilities
-  findPokemon.description = description
-  findPokemon.coach = coachId
-
-  const savedPokemon = await findPokemon.save()
-  res.status (200).json (savedPokemon)
-  
-  }catch(error){
-    console.error(error)
-    res.status(500).json ({message:error.message})
-   
-  }
+const findAllPokemons = async (request, response) => {
+    try{
+        const allPokemons = await PokedexModel.find()
+        response.status(200).json(allPokemons)
+    } catch(error) {
+        response.status(500).json({message: error.message})
+    }
 }
 
-const deletePokemonById = async (req, res) => {
-try {
-  const { id } = req.params
-  const findPokemon = await PokedexModel.findById(id)
+const findPokemonById = async (request, response) => {
+    try{
+        const findPokemon = await PokedexModel.findById(request.params.id).populate("coach")
 
-  if (findPokemon == null) {
-    return res.status(404).json({ message: `O pokemon com o id# ${id} não foi encontrado.`})
-  }
-
-  await findPokemon.remove()
-
-  res.status(200).json({ message : `O pokemon ${findPokemon.name} foi deletado com sucesso.` })
-} catch (error) {
-  res.status(500).json({ message : error.message})
+        if(findPokemon == null) {
+            return response.status(404).json({message: "pokemon não encontrado."})
+        }
+        response.status(200).json(findPokemon)
+    } catch(error) {
+        response.status(500).json({message: error.message})
+    }
 }
-} 
+
+const updatePokemonById = async (request, response) => {
+    try {
+      const { id } = request.params;
+      const { coachId, name, type, abilities, description } = request.body;
+
+      const findPokemon = await PokedexModel.findById(id);
+
+      if (findPokemon == null) {
+        return response.status(404).json({ message: "Pokemon não encontrado" });
+      }
+
+      if (coachId) {
+        const findCoach = await CoachModel.findById(coachId);
+
+        if (findCoach == null) {
+          return response.status(404).json({ message: "Treinador não foi encontrado" });
+        }
+      }
+
+      findPokemon.name = name || findPokemon.name;
+      findPokemon.type = type || findPokemon.type;
+      findPokemon.abilities = abilities || findPokemon.abilities;
+      findPokemon.description = description || findPokemon.description;
+      findPokemon.coach = coachId || findPokemon.coach;
+
+      const savedPokemon = await findPokemon.save();
+
+      response.status(200).json(savedPokemon);
+    } catch (error) {
+      response.status(500).json({ message: error.message });
+    }
+  };
+
+  const deletePokemonById = async (request, response) => {
+    try {
+      const { id } = request.params
+      const findPokemon = await PokedexModel.findById(id)
+
+      if(findPokemon == null){
+        return response.status(404).json({message: `O pokemon com o id# ${id} não foi encontrado`})
+      }
+
+      await findPokemon.remove()
+
+      response.status(200).json({message: `O pokemon ${findPokemon.name} foi deletado com sucesso.`})
+    } catch(error) {
+      response.status(500).json({message:error.message})
+    }
+}
 
 module.exports = {
- createPokemon, findAllPokemons, findPokemonById, updatePokemonById, deletePokemonById
-
+    createPokemon,
+    findAllPokemons,
+    findPokemonById,
+    updatePokemonById,
+    deletePokemonById
 }

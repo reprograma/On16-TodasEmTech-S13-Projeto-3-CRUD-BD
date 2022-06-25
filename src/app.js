@@ -3,6 +3,8 @@ const express = require('express')
 const cors = require('cors')
 const mongoose=require("./database/mongooseConnect")
 const coachRoutes=require("./router/coachRouter")
+const pokedexRoutes = require('./router/pokedexRouter')
+
 
 const app = express()
 
@@ -15,6 +17,8 @@ app.use(cors())
 mongoose.connect()
 
 app.use(coachRoutes)
+
+app.use(pokedexRoutes)
 
 module.exports = app
 
