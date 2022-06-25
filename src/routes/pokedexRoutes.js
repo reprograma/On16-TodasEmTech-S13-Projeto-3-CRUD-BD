@@ -9,7 +9,10 @@ router.get("/pokedex/:id", controller.findPokemonById)
 router.patch("/pokedex/:id", controller.updatePokemonById)
 router.delete("/pokedex/:id", controller.deletePokemonById)
 
+ main
 
 
 
+
+ main
 module.exports = router
