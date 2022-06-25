@@ -110,7 +110,25 @@ const deletePokemonById = async (req, res) => {
   }
 } 
 
+
+const deletePokemon = async (req, res) => {
+  try {
+    const { id } = req.params
+    await PokedexModel.findByIdAndDelete(id)
+    const message = `O pokemon com o ${id} foi deletado com sucesso!`
+    res.status(200).json({ message })
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ message: error.message })
+  }
+}
+
 module.exports = {
-   createPokemon, findAllPokemons, findPokemonById, updatePokemonById, deletePokemonById
+   createPokemon, 
+   findAllPokemons, 
+   findPokemonById, 
+   updatePokemonById, 
+   deletePokemonById,
+   deletePokemon
 
 }
