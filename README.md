@@ -1,24 +1,9 @@
 # On16-TodasEmTech-S13-Projeto-3-CRUD-BD
 Turma Online 16 - Todas em Tech | Back-end | 2022 | Semana 13 - Projeto Guiado CRUD com MongoDB
-
-## Olá, prazer em conhece-las💜
-
-Um pouquinho sobre mim.  Meu nome é Beatriz Ramerindo, sou engenheira de software, não possui faculdade, trabalho com enfãse em desenvolvimento back-end de produto, nas stacks de Spring com Koltin e e Express/Node com Typescript/Javascript.  Sou tão apaixonada por Js que ganhei uma caneca da mesma, apaixonada que só né, amo falar sobre, mas porque raios afinal `0 + null = 0?`. Prazer em conhece-las, quem curtir ai um anime de um pirata que estica e/ou curti um lolzinho, chama no PV depois e bora criar umas teoria ai ou uma flex?
-
-- Chamada, apresentação das monitoras e acordos:
-
-<img src="https://i.pinimg.com/474x/b4/17/86/b41786b5e7627ed0c678a0ef4a62e9f6.jpg" alt="video chamada" width="200">
-
-* Caso queira fazer uma pergunta, levante a mão por favor.
-* Enviar as dúvidas no chat, assim minhas queridas monitoras podem ajudar.
-* Manter microfone desligado quando outras pessoas estiverem falando
-* Manter câmera ligada o máximo possível
-* momento de olho na tela, sim depois deixo copiar 😌
-
 <br>
 <br>
 
-## Revisão
+## Conteúdo
 
 ### `1. Por que precisamos de um banco de dados?`
 
@@ -124,7 +109,7 @@ const PokemonSchema = monogoose.Schema({
 3 - requiro no app e chamo a função de conexão
 
 
-## [extra: 01] Dotenv - variaves de ambiente
+## Dotenv - variaves de ambiente
 
 Essa dica com certeza dará mais maturidade aos seus códigos de backend.
 Afinal de contas dotenv é uma excelente ferramenta para gerenciar os dados sensíveis de desenvolvimento que não devem ser compartilhados como: chaves de API’s, informações do banco de dados, entre outras.
@@ -154,7 +139,7 @@ process.env.NOME_DA_CHAVE
 
 Você pode criar um .env.example e deixar apenas as chaves genéricas
 ```
-## [extra: 02] Classes | POO (orientação a objetos) Conceitos básicos
+## Classes | POO (orientação a objetos) Conceitos básicos
 Uma breve introdução sobre classes e objetos, para que possamos entender melhor o  nosso ORM.
 
 ###  uso da palavra reservada `new`
@@ -414,10 +399,6 @@ coach { // 'coach' nome da key 'chave' da schema
 <br>
 <br>
 
-
-##  🎓 Combinado da semana
- - [PARA O LAR](./para_o_lar//instru%C3%A7%C3%B5es.md) < clique aqui
-
 ## 📖 Referências
 - https://www.gartner.com/en/information-technology/glossary/object-data-model
 - https://medium.com/tkssharma/node-js-with-mongoose-odm-9697c09665df
@@ -434,11 +415,3 @@ coach { // 'coach' nome da key 'chave' da schema
 - [Resumo Mongodb - Codigo Fonte TV](https://www.youtube.com/watch?v=4dTI1mVLX3I)
 - [nodeJs Express Mongo - Api rest full Turitorial](https://www.youtube.com/watch?v=K5QaTfE5ylk)
 - [O que é banco de dados? - Curso em Video](https://www.youtube.com/watch?v=Ofktsne-utM)
-
-## 👋🏾 Minhas redes sociais
- - [LINKEDIN](https://www.linkedin.com/in/beatriz-ramerindo/)
- - [GITHUB](https://github.com/isjanebia)
- - [INSTAGRAN](https://www.instagram.com/isjanebea/)
- - [site] [beatriz.rarmerindo.com.br](beatriz.ramerindo.com.br)
- - [email] bea@ramerindo.com.br
-
