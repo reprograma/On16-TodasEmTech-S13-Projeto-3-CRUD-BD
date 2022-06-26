@@ -10,5 +10,5 @@ router.get("/pokedex", controller.findAllPokemons)
 router.get("/pokedex/:id", controller.findPokemonById)
 router.patch("/pokedex/:id", controller.updatePokemonById)
 router.delete("/pokedex/:id", controller.deletePokemonById)
-
+//Exportações
 module.exports = router

@@ -3,8 +3,6 @@ const PokedexModel = require('../models/pokedexModel')
 const CoachModel = require('../models/coachModel')
 
 //Códigos API
-
-//Cria novo pokémon. Verbo POST
 const createPokemon = async (req, res) => {
   try {
     const { coachId, name, type, abilities, description } = req.body
@@ -16,7 +14,7 @@ const createPokemon = async (req, res) => {
     const findCoach = await CoachModel.findById(coachId)
 
     if (!findCoach) {
-      return res.status(404).json({ message: 'Treinador não foi encontrado!' })
+      return res.status(404).json({ message: 'Treinador não encontrado!' })
     }
 
     const newPokemon = new PokedexModel({
@@ -34,7 +32,6 @@ const createPokemon = async (req, res) => {
   }
 }
 
-//Retorna lista de Pokemons criados. Verbo GET.
 const findAllPokemons = async (req, res) => {
   try {
     const allPokemons = await PokedexModel.find().populate('coach')
@@ -44,8 +41,6 @@ const findAllPokemons = async (req, res) => {
   }
 }
 
-
-//Retorna pokémon por ID. Verbo GET.
 const findPokemonById = async (req, res) => {
   try {
     const findPokemon = await PokedexModel
@@ -61,25 +56,20 @@ const findPokemonById = async (req, res) => {
   }
 }
 
-//Atualiza um pokémon por ID. Verbo PATCH
 const updatePokemonById = async (req, res) => {
   try {
     const { id } = req.params
     const { coachId, name, type, abilities, description } = req.body
     const findPokemon = await PokedexModel.findById(id)
-    // //Verificar se o Pokemon existe
     if (findPokemon == null) {
       return res.status(404).json({ message: "Pokemon não encontrado." })
     }
-    //Verificar se o coachID recebido existe
     if (coachId) {
       const findCoach = await CoachModel.findById(coachId)
       if (findCoach == null) {
         return res.status(404).json({ message: 'Treinador não encontrado!' })
       }
     }
-    //Verifica se o dado recebido é válido
-    // if (name) findPokemon.name = name. Outra forma de fazer o que tá embaixo
     findPokemon.name = name || findPokemon.name
     findPokemon.type = type || findPokemon.type
     findPokemon.abilities = abilities || findPokemon.abilities
@@ -94,7 +84,6 @@ const updatePokemonById = async (req, res) => {
   }
 }
 
-//Deleta um Pokémon. Verbo DELETE
 const deletePokemonById = async (request, response) => {
   try {
     const { id } = request.params
@@ -111,7 +100,7 @@ const deletePokemonById = async (request, response) => {
 
   }
 }
-
+//Exportações
 module.exports = {
   createPokemon, findAllPokemons, findPokemonById, updatePokemonById, deletePokemonById
 

@@ -10,5 +10,5 @@ router.get("/treinadores", controller.findAllCoaches)
 router.get("/treinadores/:id", controller.findCoachById)
 router.patch("/treinador/:id", controller.updateCoach)
 router.delete("/treinador/:id", controller.deleteCoach)
-
+//Exportações
 module.exports = router
