@@ -12,7 +12,7 @@
     "url": "git+https://github.com/reprograma/On16-TodasEmTech-S13-Projeto-3-CRUD-BD.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Marina Porto",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/reprograma/On16-TodasEmTech-S13-Projeto-3-CRUD-BD/issues"
@@ -24,6 +24,7 @@
     "mongoose": "^6.4.0"
   },
   "devDependencies": {
+    "dotenv": "^16.0.1",
     "nodemon": "^2.0.16"
   }
 }
