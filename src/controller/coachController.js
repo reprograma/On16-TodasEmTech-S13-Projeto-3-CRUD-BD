@@ -1,4 +1,6 @@
 const CoachModel = require('../models/coachModel')
+const jwt = require('jsonwebtoken')
+const SECRET = process.env.SECRET
 // uma model não é uma variável normal, ela é uma classe então é pascalcase, com letra maiúscula
 
 // post -> criar um treinador 
@@ -24,6 +26,7 @@ const createCoach = async (req, res) => {
 
         // passa o savedCoach porque é o mais atualizado
         res.status(201).json(savedCoach)
+        
     } catch (error) {
         console.error(error) //  vai mostrar no terminal qual foi o motivo do erro
         res.status(500).json({ message: error.message })
@@ -32,13 +35,27 @@ const createCoach = async (req, res) => {
 
 const findAllCoaches = async (req, res) => {
     try {
-        const allCoaches = await CoachModel.find()
-        res.status(200).json(allCoaches)
-    } catch (error) {
-        console.error(error)
-        res.status(500).json({ message: error.message })
+      const authHeader = req.get('authorization')
+  
+      if(!authHeader) {
+        return res.status(401).json({ message: "cadê o auth???"})
+      }
+      const token = authHeader.split(" ")[1]
+      await jwt.verify(token, SECRET, async function (erro) {
+        if (erro) {
+          return res.status(403).send("não rolou")
+        }
+        
+      const allCoaches = await CoachModel.find()
+      res.status(200).json(allCoaches)
+      })
+  
+    } catch(error) {
+      console.error(error)
+      res.status(500).json({ message: error.message})
     }
-}
+  }
+
 // update com o mongoose
 
 const updateCoach = async (req, res) => {
