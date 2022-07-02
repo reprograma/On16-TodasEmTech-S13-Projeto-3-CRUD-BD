@@ -1,9 +1,10 @@
-require('dotenv').config()
+require('dotenv-safe').config()
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('./database/mongooseConnect')
 const coachRoutes = require('./routes/coachRoutes')
 const pokedexRoutes = require('./routes/pokedexRoutes')
+const colaboradorasRoutes = require('./routes/colaboradorasRoute')
 
 const app = express()
 
@@ -17,6 +18,7 @@ mongoose.connect()
 
 app.use(coachRoutes)
 app.use(pokedexRoutes)
+app.use(colaboradorasRoutes) 
 
 module.exports = app
 
