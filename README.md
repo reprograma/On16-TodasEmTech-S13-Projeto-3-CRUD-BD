@@ -1,3 +1,13 @@
+# SEMANA 13 - REPROGRAMA
+
+# AULA MINISTRADA POR BEATRIZ RAMERINDO
+
+## LINGUAGEM
+<img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
+
+O que aprendi?
+### useNewUrlParser
+### useUnifiedTopology
 # On16-TodasEmTech-S13-Projeto-3-CRUD-BD
 Turma Online 16 - Todas em Tech | Back-end | 2022 | Semana 13 - Projeto Guiado CRUD com MongoDB
 

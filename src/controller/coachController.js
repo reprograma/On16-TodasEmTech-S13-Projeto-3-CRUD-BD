@@ -1,5 +1,4 @@
 
-// post -> criar um treinador
 // get -> visualizar todos os treinadores
 // get -> visualizar um treinador por id
 // patch -> 
@@ -12,7 +11,8 @@
  * const name = req.body.name
  * const team = req.body.team
  */
-const CoachModel = require('../models/coachModel')
+const CoachModel = require('../models/coachModel') // a variavel esta com letra maiuscula por se tratar de uma classe
+// post -> criar um treinador 
 const createCoach = async (req, res) => {
    try {
       const { name, team, region, age, gender } = req.body

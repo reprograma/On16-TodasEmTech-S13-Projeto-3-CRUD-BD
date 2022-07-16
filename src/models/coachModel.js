@@ -1,4 +1,5 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose')// chamando o mongoose
+const SECRET = process.env.SECRET;
 
 const coachSchema = mongoose.Schema({
   _id: {
@@ -32,5 +33,5 @@ const coachSchema = mongoose.Schema({
 }, { timestamps: true }) // gera automaticamente as datas de atualizacao e criação
 
 const Model = mongoose.model('coach', coachSchema)
-
+// exportando o model
 module.exports = Model
