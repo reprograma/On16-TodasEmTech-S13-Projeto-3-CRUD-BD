@@ -1,21 +1,23 @@
-const DATABASE_URI = "mongodb+srv://NilvaReprograma:2TBa9W3yf9e2uoBD@cluster0.7rbouil.mongodb.net/projeto_db"
-// 
-const mongoose = require('mongoose')
-// funçao de conexao com o banco
-const connect = async() => {
-   try {
-     await mongoose.connect(DATABASE_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-     })
+const DATABASE_URI = process.env.DATABASE_URI;
 
-     console.log('banco conectado! ')
-   } catch (error) {
-    console.error(error)
-   }
-}
+const mongoose = require("mongoose");
+// funçao de conexao com o banco
+//toda vez que declarar async declara o await
+const connect = async () => {
+  // conexao assincrona
+  try {
+    await mongoose.connect(DATABASE_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    //foi utilizado console.error, Escreve uma msg de erro no web console. lembrando que esta fora do padrão.
+    console.log("banco conectado! ");
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 // exporta o módulo
 module.exports = {
-  connect
-}
+  connect,
+};

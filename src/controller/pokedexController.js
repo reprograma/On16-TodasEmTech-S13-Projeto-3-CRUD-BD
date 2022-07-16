@@ -33,7 +33,7 @@ const createPokemon = async (req, res) => {
     res.status(500).json({ message: error.message })
    }
 }
-
+//usou populate para 
 const findAllPokemons = async (req, res) => {
    try {
       const allPokemons = await PokedexModel.find().populate('coach')

@@ -22,7 +22,7 @@ const PokedexSchema = mongoose.Schema({
    },
 
    description: String,
-
+//adicionando o treinador
    coach: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
@@ -31,4 +31,5 @@ const PokedexSchema = mongoose.Schema({
 }, { timestamps: true })
 
 const Model = mongoose.model('pokedex', PokedexSchema)
+
 module.exports = Model

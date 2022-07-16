@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')// chamando o mongoose
+const SECRET = process.env.SECRET;
 
 const coachSchema = mongoose.Schema({
   _id: {
