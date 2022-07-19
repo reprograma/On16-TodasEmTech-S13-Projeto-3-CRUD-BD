@@ -300,7 +300,7 @@ coach { // 'coach' nome da key 'chave' da schema
 
 ### Regras de negócio
 
-- [ ]  Não deverá ser possível criar mais de um treinador com o mesmo nome
+- [ ]  Não deverá ser possível criar treinador com o mesmo nome
 - [ ]  Para criar um novo pokemon, deverá vincular no momento da criação a um treinador já existente no sistema, utilizando o numero do id do treinador correspondente no corpo da requisição
 
 <br>
@@ -355,7 +355,7 @@ coach { // 'coach' nome da key 'chave' da schema
 - type: texto e obrigatório
 - abilities: array de texto, opcional e com default []
 - description: texto e opcional
-
+- avaliable: bolean e opcional com o default true
 
 ### API deve retornar seguinte JSON:
 
