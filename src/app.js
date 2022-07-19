@@ -1,4 +1,5 @@
 require('dotenv').config()
+// imports
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('./database/mongooseConnect')
@@ -7,16 +8,16 @@ const pokedexRoutes = require('./routes/pokedexRoutes')
 
 const app = express()
 
-// 1. body parse
-// 2. deixar a api publica
-// 3. conectar o banco
+// 1.body parse
 app.use(express.json())
+
+// 2. deixar a api pública
 app.use(cors())
 
-mongoose.connect()
-
-app.use(coachRoutes)
 app.use(pokedexRoutes)
 
-module.exports = app
+// 3. conectar o banco
+mongoose.connect()
 
+app.use(coachRoutes) // fazer esse após o banco conectar e mostar isso no terminal 
+module.exports = app
