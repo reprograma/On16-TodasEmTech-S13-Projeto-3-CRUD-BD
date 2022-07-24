@@ -111,6 +111,9 @@ const deletePokemonById = async (req, res) => {
 } 
 
 module.exports = {
-   createPokemon, findAllPokemons, findPokemonById, updatePokemonById, deletePokemonById
-
+   createPokemon, 
+   findAllPokemons, 
+   findPokemonById, 
+   updatePokemonById, 
+   deletePokemonById
 }

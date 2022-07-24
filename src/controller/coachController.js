@@ -77,5 +77,9 @@ const deleteCoach = async (req, res) => {
 }
 
 module.exports =  {
-  createCoach, findAllCoaches, updateCoach, deleteCoach, findCoachById
+  createCoach, 
+  findAllCoaches, 
+  updateCoach, 
+  deleteCoach, 
+  findCoachById
 }
