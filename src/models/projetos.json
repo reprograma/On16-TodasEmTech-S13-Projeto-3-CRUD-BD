@@ -1,0 +1,20 @@
+[
+    {
+    "id": "1",
+    "name": "SegurasRio",
+    "state": "Rio de Janeiro",
+    "topic": "Segurança",
+    "description": "Plataforma para a construção de redes de segurança, apoio e notificação de formas de combater a violência contra a mulher negra no espaço público. Para isso, o projeto está desenvolvendo um aplicativo que permite a conexão entre mulheres que partilham o mesmo trajeto para o trabalho, a universidade ou qualquer outro local.",
+    "formato": "EAD"
+    },
+    
+    
+    {
+    "id": "2",
+    "name": "RADAR OPALMA",
+    "state": "Salvador",
+    "topic": "Notícia",
+    "description": "Alunos do município de Cachoeira, BA, incomodados com a falta de notícias voltadas à realidade dos estudantes de Quilombo de Opalma, criaram uma ferramenta online para compartilhar com a população acontecimentos da região em que vivem.",
+    "format": "Presencial"
+    }
+]
